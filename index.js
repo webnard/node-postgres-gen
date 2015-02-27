@@ -15,6 +15,7 @@ var domain = require('domain');
 var __logFn = null, makeDB;
 
 module.exports = function PostgresGen(con) { return makeDB.call(null, con); };
+module.exports.types = pg.types;
 module.exports.log = function log(fn) {
   if (!!fn && typeof fn === 'function') __logFn = fn;
 };
